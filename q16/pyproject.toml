@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greetlab-24070030103"
+version = "0.1.0"
+description = "最小命令行问候包（第 9 题：Packaging and Shipping Code）"
+requires-python = ">=3.9"
+
+[project.scripts]
+sdt-greet = "greetlab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ---- q13 新增：ruff 最小配置 ----
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]   # pycodestyle / pyflakes / isort / warnings
+ignore = []                     # 不得全局忽略规则，问题必须修复
+
+[tool.ruff.format]
+quote-style = "double"
+
+# ---- q13 新增：pytest 最小配置 ----
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
