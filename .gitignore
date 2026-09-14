@@ -1,0 +1,17 @@
+# Python caches / build artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# generated outputs (regenerate via make / scripts)
+*.log
+q14/stats.txt
+q14/report.txt
+q15/summary.md
+
+# OS
+Thumbs.db
+.DS_Store

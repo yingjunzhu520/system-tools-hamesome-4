@@ -446,8 +446,10 @@ q15 $\to$ q16（含破坏/修复/提交）$\to$ 练习 $\to$ 报告 $\to$ 截图
 的顺序\textbf{分次提交}，每步均为增量修改。
 
 \subsection{提交记录（分次提交，非全量）}
-本地仓库的 \texttt{git log --oneline} 真实输出如下（由新到旧，共 8 条）：
+本地仓库的 \texttt{git log --oneline} 真实输出如下（由新到旧；均为分次增量提交，无单次全量提交）：
 \begin{lstlisting}[language=bash]
+1a9b069 chore: regenerate commit screenshot + fpdf2 preview
+ae28c97 fix(report): replace invalid \sverb with \texttt in exercise 6
 8067e44 docs: add README with structure and run steps
 e2dd3a4 chore: add terminal screenshot generator + 8 PNGs
 3ea8775 docs: add week4 LaTeX report (q13-q16 + 14 exercises)
