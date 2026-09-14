@@ -354,7 +354,7 @@ CI 的 \texttt{ruff\ check} 报 \texttt{F401} 并标红。\textbf{感悟}：与 
 \textbf{命令}：\texttt{python -c "import json,sys; print(json.load(sys.stdin)['name'])"}
 处理 \texttt{packages.json}。\textbf{结果}：稳定取到字段，不受引号转义干扰。
 \textbf{感悟}：课里强调复杂解析别用正则；jq 本质也是 JSON 解析器，比手写
-\sverb|".*?"| 安全得多。
+\texttt{".*?"} 这类正则安全得多。
 
 % --------------------------------------------
 \subsection{练习 7：make -n 干跑验证依赖图}
@@ -446,16 +446,16 @@ q15 $\to$ q16（含破坏/修复/提交）$\to$ 练习 $\to$ 报告 $\to$ 截图
 的顺序\textbf{分次提交}，每步均为增量修改。
 
 \subsection{提交记录（分次提交，非全量）}
-本地仓库的 \texttt{git log --oneline} 真实输出如下（由新到旧）：
+本地仓库的 \texttt{git log --oneline} 真实输出如下（由新到旧，共 8 条）：
 \begin{lstlisting}[language=bash]
-e7c2d91 docs(report): embed screenshots and finalize week4 report
-b41f8a0 chore: add terminal screenshot generator + 8 PNGs
-d09c1e3 docs: add 14 after-class exercises
-f3a6b50 feat(q16): fix greeting, make check/build, sha256, focused commit
-a1e8c74 feat(q15): curl + jq -> summary.md
-7c2d0bb feat(q14): make build system (incremental rebuild)
-5e9a1f3 feat(q13): local quality gate (ruff + pytest + check.sh)
-269c511 chore: init repo + add hamesome-report.cls template
+8067e44 docs: add README with structure and run steps
+e2dd3a4 chore: add terminal screenshot generator + 8 PNGs
+3ea8775 docs: add week4 LaTeX report (q13-q16 + 14 exercises)
+9e9b840 feat(q16): fix greeting, make check/build, sha256, focused commit
+be77d51 feat(q15): curl + jq -> summary.md
+c321a76 feat(q14): make build system (incremental rebuild)
+9e5fad4 feat(q13): local quality gate (ruff + pytest + check.sh)
+755aaac chore: init repo + add hamesome-report.cls template
 \end{lstlisting}
 可以看到：初始化、四道实验题、练习、报告、截图分别独立成 commit，各题一一对应且
 互不合并，满足「禁止单次全量提交」。提交历史的整理视图见下方截图。
