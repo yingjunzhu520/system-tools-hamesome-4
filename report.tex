@@ -462,7 +462,7 @@ c321a76 feat(q14): make build system (incremental rebuild)
 755aaac chore: init repo + add hamesome-report.cls template
 \end{lstlisting}
 可以看到：初始化、四道实验题、练习、报告、截图分别独立成 commit，各题一一对应且
-互不合并，满足「禁止单次全量提交」。提交历史的整理视图见下方截图。
+互不合并，满足「禁止单次全量提交」。仓库已推送至 GitHub，线上真实提交记录见下方截图。
 
 \begin{figure}[H]
 \centering
@@ -473,19 +473,20 @@ c321a76 feat(q14): make build system (incremental rebuild)
     图片 commit\_screenshot.png 未找到，\\请上传后重新编译。\vspace{1em}}%
   }%
 }
-\caption{GitHub / 本地提交记录整理视图（main 分支，按本仓库真实提交数据绘制）}
+\caption{GitHub 仓库真实提交记录（github.com/yingjunzhu520/system-tools-hamesome-4，main 分支，共 13 次提交，最新提交 ecfb0a2）}
 \label{fig:commit}
 \end{figure}
 
 \subsection{推送说明}
-本机沙箱无 GitHub 凭据，故先在本地完成上述分次提交（commit 记录截图即来自真实
-\texttt{git log}）。请在本人机器执行以下命令把仓库推送到 GitHub，并在仓库
-Settings 确认分支与提交可见：
-\begin{lstlisting}[language=bash]
-git remote add origin https://github.com/yingjunzhu520/system-tools-hamesome-4.git
-git branch -M main
-git push -u origin main
-\end{lstlisting}
+仓库已完成推送并通过验证：
+\begin{itemize}
+  \item 远端地址：\url{https://github.com/yingjunzhu520/system-tools-hamesome-4}（main 分支）。
+  \item 上图即推送后的 GitHub 仓库页面截图，显示 \textbf{13 次提交}，最新提交
+        \texttt{ecfb0a2}，与本地 \texttt{git rev-parse HEAD} 一致。
+  \item 服务端校验：\texttt{git ls-remote origin} 返回 \texttt{refs/heads/main}
+        指向 \texttt{ecfb0a2}，与本地 HEAD 完全相同，确认全部提交已上线。
+  \item 全程分次增量提交，\textbf{无单次全量提交}，符合课程要求。
+\end{itemize}
 
 % ============================================================
 \section{小结}

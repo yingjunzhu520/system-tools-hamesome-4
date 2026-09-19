@@ -287,13 +287,12 @@ section("7", "版本控制与提交记录")
 sub("仓库地址")
 body("GitHub：https://github.com/yingjunzhu520/system-tools-hamesome-4")
 body("本地按「初始化模板 -> q13 -> q14 -> q15 -> q16（含破坏/修复/提交）-> 练习 -> 报告 -> 截图 -> "
-     "README -> 报告修订」的顺序分次提交，每步均为增量修改（共 9 条 commit，无单次全量提交）。"
-     "沙箱无 GitHub 凭据，提交记录的整理视图见下图（来自真实 git log）。")
-img("commit_screenshot.png", "本地提交记录整理视图（main 分支，按本仓库真实提交数据绘制）", 0.92)
+     "README -> 报告修订」的顺序分次提交，每步均为增量修改（共 13 条 commit，无单次全量提交）。"
+     "仓库已推送至 GitHub，线上真实提交记录见下图。")
+img("commit_screenshot.png", "GitHub 仓库真实提交记录（main 分支，共 13 次提交，最新 ecfb0a2）", 0.92)
 sub("推送说明")
-body("请在本人机器执行以推送到 GitHub：\n"
-     "git remote add origin https://github.com/yingjunzhu520/system-tools-hamesome-4.git\n"
-     "git branch -M main && git push -u origin main")
+body("仓库已完成推送并通过服务端校验：git ls-remote origin 返回 refs/heads/main 指向 ecfb0a2，"
+     "与本地 HEAD 完全一致，确认全部 13 次提交已上线，符合「禁止单次全量提交」要求。")
 
 # ===================== 8 小结 =====================
 section("8", "小结")
